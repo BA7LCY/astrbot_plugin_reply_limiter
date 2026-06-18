@@ -18,7 +18,7 @@ class ReplyLimiterPlugin(Star):
 
         self.enabled = bool(self.config.get("enabled", True))
         self.wake_only = bool(self.config.get("wake_only", True))
-        self.wake_keywords = self._load_set("wake_keywords", ["弥灵"])
+        self.wake_keywords = self._load_set("wake_keywords", ["astrbot"])
         self.silent_block = bool(self.config.get("silent_block", True))
         self.block_reply = str(self.config.get("block_reply", ""))
         self.lock_timeout_seconds = int(self.config.get("lock_timeout_seconds", 180))
