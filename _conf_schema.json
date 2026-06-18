@@ -1,0 +1,49 @@
+{
+  "enabled": {
+    "description": "启用插件",
+    "type": "bool",
+    "default": true
+  },
+  "wake_only": {
+    "description": "只限制唤醒消息；普通聊天不处理。唤醒消息会绕过忙锁。",
+    "type": "bool",
+    "default": true
+  },
+  "wake_keywords": {
+    "description": "唤醒词兜底。文本包含这些词时按唤醒处理。",
+    "type": "list",
+    "default": [
+      "弥灵"
+    ]
+  },
+  "silent_block": {
+    "description": "忙锁拦截时是否静默。",
+    "type": "bool",
+    "default": true
+  },
+  "block_reply": {
+    "description": "非静默拦截时发送的提示。",
+    "type": "string",
+    "default": ""
+  },
+  "lock_timeout_seconds": {
+    "description": "异常未解锁时的自动解锁秒数。",
+    "type": "int",
+    "default": 180
+  },
+  "lock_scope": {
+    "description": "忙锁隔离范围：umo=同会话共用，保持同一会话只跟一个人对话；global=全局共用；sender=按发起人隔离。",
+    "type": "string",
+    "default": "umo"
+  },
+  "whitelist": {
+    "description": "UMO 白名单。管理员也填这里，命中后不受限制。",
+    "type": "list",
+    "default": []
+  },
+  "global_blacklist": {
+    "description": "UMO 黑名单，命中后直接拦截。",
+    "type": "list",
+    "default": []
+  }
+}
