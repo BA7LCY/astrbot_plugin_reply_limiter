@@ -35,7 +35,7 @@ default:GroupMessage:<group_id>
 {
   "enabled": true,
   "wake_only": true,
-  "wake_keywords": ["弥灵"],
+  "wake_keywords": ["astrbot"],
   "silent_block": true,
   "block_reply": "",
   "lock_timeout_seconds": 180,
