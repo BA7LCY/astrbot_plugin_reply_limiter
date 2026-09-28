@@ -13,7 +13,7 @@
     "description": "唤醒词兜底。文本包含这些词时按唤醒处理。",
     "type": "list",
     "default": [
-      "弥灵"
+      ""
     ]
   },
   "silent_block": {
