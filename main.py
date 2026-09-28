@@ -7,9 +7,9 @@ from astrbot.api.star import Context, Star, register
 
 @register(
     "astrbot_plugin_reply_limiter",
-    "miling",
+    "BA7LCY",
     "按 UMO 会话隔离的唤醒回复忙锁：同会话上一条回复发送后才允许下一条",
-    "1.8.1",
+    "1.8.2",
 )
 class ReplyLimiterPlugin(Star):
     def __init__(self, context: Context, config: AstrBotConfig = None):
@@ -141,13 +141,12 @@ class ReplyLimiterPlugin(Star):
             return
 
         key = self._lock_key(event, umo)
-        if not self._is_wake_trigger(event):
-            if self._is_busy(key):
-                logger.warning(f"[reply_limiter] busy blocked key={key} umo={umo}")
-                if not self.silent_block and self.block_reply:
-                    yield event.plain_result(self.block_reply)
-                event.stop_event()
-                return
+        if self._is_busy(key):
+            logger.warning(f"[reply_limiter] busy blocked key={key} umo={umo}")
+            if not self.silent_block and self.block_reply:
+                yield event.plain_result(self.block_reply)
+            event.stop_event()
+            return
 
         self._lock(event, key)
 
