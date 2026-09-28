@@ -1,0 +1,7 @@
+name: astrbot_plugin_reply_limiter
+display_name: 会话忙锁
+desc: 按 UMO 会话隔离的唤醒回复忙锁插件。
+version: v0.1.0
+author: BA7LCY
+repo: "https://github.com/BA7LCY/astrbot_plugin_reply_limiter"
+astrbot_version: ">=4.23.4"
